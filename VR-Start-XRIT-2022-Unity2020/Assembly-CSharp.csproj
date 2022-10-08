@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\RightHandControl.cs" />
     <Compile Include="Assets\Scripts\LeftHandControl.cs" />
     <Compile Include="Assets\Scripts\Pedestrian\PedestrianRoute.cs" />
+    <Compile Include="Assets\Scripts\TrafficLightController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
