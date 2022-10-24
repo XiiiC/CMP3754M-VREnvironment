@@ -15,6 +15,9 @@ public class TrafficLightController : MonoBehaviour
     public GameObject t3green;
     public GameObject t3red;
 
+    public Transform t1Wall;
+    public Transform t2Wall;
+    public Transform t3Wall;
     public float stateTimer;
     public float timeRemaining;
 
@@ -51,6 +54,7 @@ public class TrafficLightController : MonoBehaviour
             {
                 SetState(0);
                 state = 0;
+                
             }
             else if (state == 0)
             {
@@ -65,21 +69,31 @@ public class TrafficLightController : MonoBehaviour
         state = c;
         if (c == 1)
         {
-            t1green.active = true;
-            t1red.active = false;
-            t2green.active = false;
-            t2red.active = true;
-            t3green.active = false;
-            t3red.active = true;
+            t1green.SetActive(true);
+            t1red.SetActive(false);
+            t2green.SetActive(false);
+            t2red.SetActive(true);
+            t3green.SetActive(false);
+            t3red.SetActive(true);
+            t1Wall.transform.position = new Vector3(t1Wall.position.x,-10.0f,t1Wall.position.z);
+            t2Wall.transform.position = new Vector3(t2Wall.position.x,0,t2Wall.position.z);
+            t3Wall.transform.position = new Vector3(t3Wall.position.x,0,t3Wall.position.z);
+            
         }
         else
         {
-            t1green.active = false;
-            t1red.active = true;
-            t2green.active = true;
-            t2red.active = false;
-            t3green.active = true;
-            t3red.active = false;
+            t1green.SetActive(false);
+            t1red.SetActive(true);
+            t2green.SetActive(true);
+            t2red.SetActive(false);
+            t3green.SetActive(true);
+            t3red.SetActive(false);
+
+            t1Wall.transform.position = new Vector3(t1Wall.position.x,0,t1Wall.position.z);
+            t2Wall.transform.position = new Vector3(t2Wall.position.x,-10.0f,t2Wall.position.z);
+            t3Wall.transform.position = new Vector3(t3Wall.position.x,-10.0f,t3Wall.position.z);
         }
     }
 }
+
+
